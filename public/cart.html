@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <img src="images/logo.png" alt="Nine Tailed Sheep Logo" class="logo" />
+      <p class="logo-name">Nine Tailed Sheep</p>
+    </div>
+    <div class="header-center">
+      <h1 class="slogan">"Think Before You Ink"</h1>
+    </div>
+    <div class="header-right">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="feature.html">Feature</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search products..." />
+    </div>
+  </header>
+
+  <main>
+    <div class="cart-items"></div>
+  </main>
+
+
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const cartItemsContainer = document.querySelector('.cart-items');
+    let cart = JSON.parse(localStorage.getItem('cart')) || []; 
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        return;
+    }
+
+    // Mapping of product names to image filenames
+    const productImageMap = {
+        "Cinnamoroll Notebook": "product1.jpg",
+        "Loot Bag": "product2.jpg",
+        "Pins": "product3.jpg",
+        "Kuromi Notebook": "product4.jpg",
+        "Chip Bags": "product5.jpg",
+        "Mugs": "product6.jpg"
+    };
+
+    function getProductImage(productName) {
+        return `images/${productImageMap[productName] || 'fallback.jpg'}`;
+    }
+
+    // Render cart items
+    function renderCartItems() {
+        cartItemsContainer.innerHTML = ''; 
+        
+        cart.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.setAttribute('data-id', item.id);
+
+            const imagePath = getProductImage(item.name); 
+
+            itemElement.innerHTML = `
+                <img src="${imagePath}" alt="${item.name}" width="80" height="80" onerror="this.onerror=null; this.src='images/fallback.jpg';">
+                <div class="cart-item-info">
+                    <h3>${item.name}</h3>
+                    <p>Price: P${item.price.toFixed(2)}</p>
+                    <p>Quantity: ${item.quantity}</p>
+                </div>
+                <div class="cart-item-actions">
+                    <button class="remove-item" data-id="${item.id}">Remove</button>
+                </div>
+            `;
+            cartItemsContainer.appendChild(itemElement);
+        });
+    }
+
+    renderCartItems(); 
+
+    // Handle removing items from the cart
+    cartItemsContainer.addEventListener('click', function(event) {
+        if (event.target.classList.contains('remove-item')) {
+            const itemId = event.target.getAttribute('data-id');
+
+            // Filter out the item to be removed, ensuring id types match
+            cart = cart.filter(item => String(item.id) !== String(itemId));
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Re-render cart items without reloading
+            renderCartItems();
+        }
+    });
+});
+
+
+  </script>
+</body>
+</html>

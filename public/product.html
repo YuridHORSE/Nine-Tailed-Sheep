@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nine Tailed Sheep - Products</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="images/logo.png" alt="Nine Tailed Sheep Logo" class="logo" />
+            <p class="logo-name">Nine Tailed Sheep</p>
+        </div>
+        <div class="header-center">
+            <h1 class="slogan">"Think Before You Ink"</h1>
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="feature.html">Feature</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+  
+   <main>
+    <!-- Product Search and Cart -->
+    <nav class="product-nav">
+        <input type="text" id="searchInput" placeholder="Search for Products" />
+        <button id="searchButton">Search</button>
+        <div class="cart">
+            <a href="cart.html">🛒Cart</a>
+        </div>
+    </nav>
+    
+
+    <!-- Product Grid -->
+    <section class="product-section">
+        <h1>All Products</h1>
+        <div class="product-list">
+            <div class="product-item" data-id="1" data-product-name="Loot Bag">
+                <img src="images/product2.jpg" alt="Loot Bag" />
+                <h2>Loot Bags</h2>
+                <p>P130</p>
+                <button class="add-to-cart" data-product-name="Loot Bag" data-product-price="130">Add to Cart</button>
+            </div>
+            
+            <div class="product-item" data-id="2" data-product-name="Pins">
+                <img src="images/product3.jpg" alt="Pins" />
+                <h2>Pin</h2>
+                <p>P130</p>
+                <button class="add-to-cart" data-product-name="Pins" data-product-price="130">Add to Cart</button>
+            </div>
+            
+            <div class="product-item" data-id="3" data-product-name="Kuromi Notebook">
+                <img src="images/product4.jpg" alt="Kuromi Notebook" />
+                <h2>Kuromi Notebook</h2>
+                <p>P130</p>
+                <button class="add-to-cart" data-product-name="Kuromi Notebook" data-product-price="130">Add to Cart</button>
+            </div>
+            
+            <div class="product-item" data-id="4" data-product-name="Mugs">
+                <img src="images/product6.jpg" alt="Mugs" />
+                <h2>Mugs</h2>
+                <p>P130</p>
+                <button class="add-to-cart" data-product-name="Mugs" data-product-price="130">Add to Cart</button>
+            </div>
+            
+          
+        </div>
+    </section>
+</main>
+
+
+    <footer>
+        <p class="copyright">Nine Tailed Sheep</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

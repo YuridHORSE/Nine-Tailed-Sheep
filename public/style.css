@@ -1,0 +1,119 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fce4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  header .logo img {
+    width: 60px;
+    margin-right: 10px;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    color: #f06292;
+  }
+  
+  .tagline {
+    font-style: italic;
+    color: #333;
+  }
+  
+  /* Form Container */
+  .form-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .form-container h2 {
+    color: #f06292;
+    margin-bottom: 20px;
+  }
+  
+  .form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="password"],
+  .form-container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 2px solid #f8bbd0;
+    border-radius: 5px;
+    background-color: #fce4ec;
+  }
+  
+  .form-container input:focus {
+    border-color: #f06292;
+    outline: none;
+  }
+  
+  /* Form Button */
+  .form-btn {
+    background-color: #f06292;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-btn:hover {
+    background-color: #ec407a;
+  }
+  
+  /* Form Link */
+  .form-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .form-link a {
+    color: #f06292;
+    text-decoration: none;
+  }
+  
+  .form-link a:hover {
+    text-decoration: underline;
+  }
+  

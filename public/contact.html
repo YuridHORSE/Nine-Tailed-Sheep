@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nine Tailed Sheep - Printing Services</title>
+    <style>
+        #map {
+            width: 40px; 
+            height: 100px; 
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="images/logo.png" alt="Nine Tailed Sheep Logo" class="logo" />
+            <p class="logo-name">Nine Tailed Sheep</p>
+        </div>
+        
+        <div class="header-center">
+            <h1 class="slogan">"Think Before You Ink"</h1>
+        </div>
+
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="feature.html">Feature</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="banner">
+        <img src="images/banner.png" alt="Banner Image" class="banner-image"/>
+    </section>
+
+    <button id="showUsersButton">Show Users</button>
+    <div id="userList"></div> 
+    <div class="container1">
+        <h1>Contact Us</h1>
+        <p>Please tell us your concerns</p>
+        <hr>
+        <form id="customerForm">
+            <label for="first-name"><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" id="first-name" required>
+        
+            <label for="last-name"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Last Name" id="last-name" required>
+
+            <label for="num"><b>Contact Number</b></label>
+            <input type="text" placeholder="Enter Contact Number" id="num" required >
+
+            <label for="email-add"><b>Email Address</b></label>
+            <input type="text" placeholder="Enter Email Address" id="email-add" required>
+
+            <label for="subject">Your Concern</label>
+            <textarea id="subject" name="subject" placeholder="Write something" style="height:200px"></textarea>
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">Submit</button>
+            </div>
+        </form>
+        <p id="message"></p> 
+    </div>
+
+
+    <div class="socials">
+       <a href="https://www.facebook.com/9tailedsheep"><img src ="images/fb.png" style="max-width: 53%;"><p>facebook</p></a>
+       <a href="https://shopee.ph/9tailedsheep?fbclid=IwY2xjawGMUXZleHRuA2FlbQIxMAABHWE0-4791Vwjr3_6pd4tpzTzOrUvbvEoxMZecZVRTsAAcbE_gIcUTq4NsA_aem_OncyMl5bcF_fa0noExEwqQ"><img src ="images/shopee.jfif"style="max-width: 53%;"><p>Shopee</p></a>
+       <a href="email.html"><img src ="images/Envelope Icon.jfif" style="max-width: 53%;"><p>Click ME!</p></a>
+    </div>
+    <div class="vl"></div>
+    <div id="map"></div>
+    <footer>
+        <div class="footer-content">
+            <div class="small-print">
+                <h5>The Small Print</h5>
+                <ul>
+                    <li><a href="#">Delivery</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h5>Social Media</h5>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">Nine Tailed Sheep</p>
+    </footer>
+    <Script type ="module" src="main.js"></Script>
+    <script src ="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyA2vGaphTkQkqV9BNYhbD5wHxItbJCs-Mg&callback=initMap" async defer></script>
+    <script>
+    
+        function initMap() {
+            const businessLocation = { lat: 14.4226589, lng: 120.9421555 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: businessLocation,
+                zoom: 15,
+            });
+
+            new google.maps.Marker({
+                position: businessLocation,
+                map: map,
+                title: "Our Business Location in Imus, 4103 Cavite",
+            });
+        }
+    </script>
+</body>
+</html>
